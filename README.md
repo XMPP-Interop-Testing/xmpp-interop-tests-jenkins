@@ -6,6 +6,30 @@ This is largely just a Groovy implementation of the XMPP Interop Tests [instruct
 
 ## Running the tests
 
+### Usage
+
+In a Jenkinsfile, invoke the XMPP interop tests container by whichever means and plugins you have available. There's no XMPP Interop Tests plugin for Jenkins to just act as a wrapper for these tests. With no plugins available, but Docker available on the Jenkins Agent, a simple invocation would look like this:
+
+```
+stage('test-server') {
+            steps {
+                sh "docker run \
+                        -v ./xmpplogs:/logs \
+                        ghcr.io/xmpp-interop-testing/xmpp_interop_tests:$SINTSE_TAG \
+                        --domain=example.org \
+                        --host=host.docker.internal \
+                        --timeout=5000 \
+                        --adminAccountUsername=admin \
+                        --adminAccountPassword=admin \
+                        --enabledTests='VCardTempIntegrationTest'"
+            }
+        }
+```
+
+Note that the logs director is mapped as a volume in order to capture output in the Jenkins workspace.
+
+### Configuration
+
 The docker container being run takes a number of optional arguments that can be enumerated via `docker run ghcr.io/xmpp-interop-testing/xmpp_interop_tests:latest --help`.
 
 ```bash
