@@ -34,18 +34,24 @@ The docker container being run takes a number of optional arguments that can be 
 
 ```bash
 Usage:
-    --domain=DOMAIN                       XMPP domain name of server under test. (default: example.org)
-    --host=HOST                           IP address or DNS name of the XMPP service to run the tests on. (default: 127.0.0.1)
-    --timeout=TIMEOUT                     Timeout in milliseconds for any XMPP action (default: 5000)
-    --adminAccountUsername=ADMINUSERNAME  Admin username for the service, to create test users (if not using IBR / XEP-0077)
-    --adminAccountUsername=ADMINPASSWORD  Admin password for the service, as above
-    --disabledTests=DISABLEDTESTS         Comma-separated list of tests to skip, e.g. EntityCapsTest,SoftwareInfoIntegrationTest
+    --domain=DOMAIN                              XMPP domain name of server under test. (default: example.org)
+    --host=HOST                                  IP address or DNS name of the XMPP service to run the tests on. (default: 127.0.0.1)
+    --timeout=TIMEOUT                            Timeout in milliseconds for any XMPP action (default: 5000)
+    --adminAccountUsername=ADMINUSERNAME         Admin username for the service, to create test users
+    --adminAccountPassword=ADMINPASSWORD         Admin password for the service, as above
+    --accountOneUsername=ACCOUNTONEUSERNAME      The first account name of a set of three accounts used for testing.
+    --accountOnePassword=ACCOUNTONEPASSWORD      The password of the accountOneUsername account.
+    --accountTwoUsername=ACCOUNTTWOUSERNAME      The second account name of a set of three accounts used for testing.
+    --accountTwoPassword=ACCOUNTTWOPASSWORD      The password of the accountTwoUsername account.
+    --accountThreeUsername=ACCOUNTTHREEUSERNAME  The third account name of a set of three accounts used for testing.
+    --accountThreePassword=ACCOUNTTHREEPASSWORD  The password of the accountThreeUsername account.
+    --disabledTests=DISABLEDTESTS                Comma-separated list of tests to skip, e.g. EntityCapsTest,SoftwareInfoIntegrationTest
     --disabledSpecifications=DISABLEDSPECIFICATIONS
-    --enabledTests=ENABLEDTESTS           Comma-separated list of the only tests to run, e.g. EntityCapsTest,SoftwareInfoIntegrationTest
+                                                 Comma-separated list of specifications to skip, e.g. XEP-0030,XEP-0199
+    --enabledTests=ENABLEDTESTS                  Comma-separated list of the only tests to run, e.g. EntityCapsTest,SoftwareInfoIntegrationTest
     --enabledSpecifications=ENABLEDSPECIFICATIONS
-                                          Comma-separated list of the only specifications to run, e.g. XEP-0030,XEP-0199
-    --help                                This help message
-                                          Comma-separated list of specifications to skip, e.g. XEP-0030,XEP-0199
+                                                 Comma-separated list of the only specifications to run, e.g. XEP-0030,XEP-0199
+    --help                                       This help message
 ```
 
 ## Contributing
