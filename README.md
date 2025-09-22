@@ -51,6 +51,7 @@ Usage:
     --enabledTests=ENABLEDTESTS                  Comma-separated list of the only tests to run, e.g. EntityCapsTest,SoftwareInfoIntegrationTest
     --enabledSpecifications=ENABLEDSPECIFICATIONS
                                                  Comma-separated list of the only specifications to run, e.g. XEP-0030,XEP-0199
+    --failOnImpossibleTest                       If set to 'true', fails the test run if any configured tests were impossible to execute. (default: 'false')
     --help                                       This help message
 ```
 
