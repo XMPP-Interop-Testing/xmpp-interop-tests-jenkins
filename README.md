@@ -28,6 +28,8 @@ stage('test-server') {
 
 Note that the logs director is mapped as a volume in order to capture output in the Jenkins workspace.
 
+This example demonstrates one possible way to provision accounts. It assumes your server is running and accessible at `shakespeare.lit`, and that it already has an administrative account (one that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html)) that uses the username `juliet` and the provided password. Other configuration methods are also available.
+
 ### Configuration
 
 The docker container being run takes a number of optional arguments that can be enumerated via `docker run ghcr.io/xmpp-interop-testing/xmpp_interop_tests:latest --help`.
