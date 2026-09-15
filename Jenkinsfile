@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         OPENFIRE_TAG =  'v5.0.1'
-        SINTSE_TAG = 'v1.7.2'
+        SINTSE_TAG = 'v1.8.0'
     }
     stages {
         stage('build-server') {
